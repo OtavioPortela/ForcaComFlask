@@ -7,7 +7,7 @@ def index():
     dados = {'profissao': 'Analista de sistemas jr',
              'idade': 26,
              'tempo': '4 anos'}
-    return render_template('index.html', nome='Otavio Augusto', dados = dados)
+    return render_template('index.html', nome=nome, dados = dados)
 
 @app.route('/contato')
 def contato():
