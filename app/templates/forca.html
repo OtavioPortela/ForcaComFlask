@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+    <h1>Pagina reservada para o jogo da forca cuja palavra e: {{palavra}}</h1>
+    <p>
+        {% for x in letra %}
+            <p> {{ x }} </p>
+        {% endfor %}
+    </p>
+    <h2>{{ marcacao }}</h2>
+
+
+{% endblock %}
