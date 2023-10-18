@@ -23,11 +23,13 @@ def contato():
 
 @app.route('/forca')
 def forca():
-    palavra = jogo.palavraJogo()
+    sorteada = jogo.palavraJogo()
+    palavra = sorteada[0]
+    dica = sorteada[1]
     letras = jogo.letrasForca(palavra)
     espacos = jogo.criarEspacos(letras, palavra)
 
-    return render_template('forca.html', palavra = palavra, letra = letras, marcacao = espacos)
+    return render_template('forca.html', dica = dica, espacos = espacos)
 
 
 @app.route('/login')
