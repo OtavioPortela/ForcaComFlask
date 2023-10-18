@@ -1,16 +1,53 @@
 {% extends 'base2.html' %}
 
 {% block conteudo %}
+    <div class="container mt-4">
+        <main>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Projeto Desenvolvido em Flask</h5>
+                            <p class="card-text">O que voce precisa de conhecimento para desenvolver um projeto como este: </p>
+                            <div class="skills">
+                                <p>HTML</p>
+                                <div class="progresso">
+                                    <span class="html">47%</span>
+                                </div>
 
-    <h2>Bem vindo {{ nome }}</h2>
-    <p>
-        Profissão: {{dados.profissao}},
-    </p>
-    <p>
-        Idade: {{dados.idade}},
-    </p>
-    <p>   
-        Tempo de carreira: {{dados.tempo}}
-    </p> 
-    <img class="imgquadrada" src="{{url_for('static', filename = 'img/forca.jpg')}}" alt="">
+                                <p>CSS</p>
+                                <div class="progresso">
+                                    <span class="css">25%</span>
+                                </div>
+
+                                <p>Python</p>
+                                <div class="progresso">
+                                    <span class="python">70%</span>
+                                </div>
+                                
+                                <p>Flask</p>
+                                <div class="progresso">
+                                    <span class="Flask">40%</span>
+                                </div>
+                                
+                                <p>Bootstrap</p>
+                                <div class="progresso">
+                                    <span class="bootstrap">30%</span>
+                                </div>
+
+                                <p>JavaScript</p>
+                                <div class="progresso">
+                                    <span class="js">5%</span>
+                                </div>
+
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+   
 {% endblock %}

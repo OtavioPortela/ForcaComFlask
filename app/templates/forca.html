@@ -2,13 +2,24 @@
 
 {% block conteudo %}
 
-    <h1>Pagina reservada para o jogo da forca cuja palavra e: {{palavra}}</h1>
-    <p>
-        {% for x in letra %}
-            <p> {{ x }} </p>
-        {% endfor %}
-    </p>
-    <h2>{{ marcacao }}</h2>
+
+    <div class="container mt-4">
+        <main>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Projeto Desenvolvido em Flask</h5>
+                            <br>
+                            <br>
+                            <h2>{{ marcacao }}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
 
 
 {% endblock %}

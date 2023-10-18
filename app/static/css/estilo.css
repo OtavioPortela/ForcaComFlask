@@ -2,3 +2,42 @@
     width: 100px;
     height: 100px;
 }
+
+.progresso {
+    margin: 2px 0 1rem 0;
+    display: flex;
+    height: 1.3rem;
+    background-color: #ccc5b9;
+    border-radius: 8px;
+}
+
+.progresso span {
+    text-align: center;
+    background-color: #eb5e28;
+    border-radius: 8px;
+    height: 100%;
+}
+
+.html {
+    width: 40%;
+}
+
+.css {
+  width: 40%;
+}
+
+.python {
+  width: 70%;
+}
+
+.bootstrap {
+  width: 30%;
+}
+
+.Flask {
+  width: 40%;  
+}
+
+.js {
+    width: 5%; 
+}
