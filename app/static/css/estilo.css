@@ -41,3 +41,23 @@
 .js {
     width: 5%; 
 }
+
+.tentativa {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.tentativa input{
+  text-align: center;
+  text-decoration: solid;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 15%;
+  padding: 1rem;
+  margin-right: 20px;
+}
+
+.tentativa button{
+  border-radius: 8px;
+}

@@ -18,6 +18,15 @@
                             <br>
                             <p><strong>DICA: {{ dica }}</strong></p>
                             <h2>{{ espacos }}</h2>
+                            <br>
+                            <div class="tentativa">
+                                
+                                <input  class="botao" id="inseriLetra" type="text" maxlength="1" name="letra"><br/>
+                                <button id="enviar" type="submit" onclick="clicou()">Enviar</button>
+                                
+                                </div>
+                            <p id="mostra">tentativas: </p>
+                            <p id="listaLetras"> Letras selecionadas: </p>
                         </div>
                     </div>
                 </div>
@@ -25,6 +34,19 @@
         </main>
     </div>
     
+    <script>
+        function clicou(){
+            letra = document.getElementById('inseriLetra').value;
+            aux = 
+            console.log(letra);
+            document.getElementById('mostra').innerHTML ="TENTATIVA: " + letra;
+            
+            document.getElementById('listaLetras').innerHTML = 'lista de letras: ['+aux+']';
+                    
+        }
 
-
+        
+    </script>
+   
+        
 {% endblock %}

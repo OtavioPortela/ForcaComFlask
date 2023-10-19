@@ -5,23 +5,19 @@ from random import choice, sample
 from app import jogo
 
 
+#variavel para armazenar o valor do input
+letra_recebida = None
 
-
-@app.route('/')
-@app.route('/index',  defaults={"nome":"usuario"})
-@app.route('/index/<nome>')
-def index(nome):
-    
-    dados = {'profissao': 'Analista de sistemas jr',
-             'idade': 26,
-             'tempo': '4 anos'}
-    return render_template('index.html', nome=nome, dados = dados)
+@app.route('/detalhes')
+def index():   
+    return render_template('index.html')
 
 @app.route('/contato')
 def contato():
     return render_template('contato.html')
 
-@app.route('/forca')
+
+@app.route('/')
 def forca():
     sorteada = jogo.palavraJogo()
     palavra = sorteada[0]
@@ -31,13 +27,3 @@ def forca():
 
     return render_template('forca.html', dica = dica, espacos = espacos)
 
-
-@app.route('/login')
-def login():
-    return render_template('login.html')
-
-@app.route('/autenticar', methods=['GET'])
-def autenticar():
-    usuario = request.args.get('usuario')
-    senha = request.args.get('senha')
-    return f"Usuario = {usuario} Senha = {senha}"
