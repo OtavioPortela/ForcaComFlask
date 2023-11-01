@@ -20,12 +20,12 @@
                             <h2>{{ espacos }}</h2>
                             <br>
                             <div class="tentativa">
-                                
-                                <input  class="botao" id="inseriLetra" type="text" maxlength="1" name="letra"><br/>
-                                <button id="enviar" type="submit" onclick="clicou()">Enviar</button>
-                                
-                                </div>
-                            <p id="mostra">tentativas: </p>
+                                <form method="post" id="formulario">
+                                    <input class="botao" id="inseriLetra" type="text" maxlength="1" name="letra"><br/>
+                                    <button id="enviar" type="submit" onclick="clicou(event)">Enviar</button>
+                                </form>
+                            </div>
+                            <p id="mostra">tentativas:{{ letra }} </p>
                             <p id="listaLetras"> Letras selecionadas: </p>
                         </div>
                     </div>
@@ -35,17 +35,28 @@
     </div>
     
     <script>
-        function clicou(){
-            letra = document.getElementById('inseriLetra').value;
-            aux = 
-            console.log(letra);
-            document.getElementById('mostra').innerHTML ="TENTATIVA: " + letra;
-            
-            document.getElementById('listaLetras').innerHTML = 'lista de letras: ['+aux+']';
-                    
+        function clicou(event) {
+            event.preventDefault();  // Impede a submissão do formulário
+    
+            var letra = document.getElementById('inseriLetra').value;
+            var listaLetras = document.getElementById('listaLetras');
+    
+            // Atualiza a variável 'letra' no servidor
+            $.ajax({
+                type: 'POST',
+                url: '/atualizar_letra',
+                data: { letra: letra },
+                success: function(response) {
+                    if (response.status === 'ok') {
+                        // Atualiza as letras selecionadas na página
+                        listaLetras.innerHTML += letra + ' ';
+                    }
+                }
+            });
+    
+            // Limpa o campo de entrada
+            document.getElementById('inseriLetra').value = '';
         }
-
-        
     </script>
    
         
